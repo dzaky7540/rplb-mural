@@ -140,7 +140,7 @@
                 <div class="row align-items-center g-5">
                     <div class="col-lg-5">
                         <div class="narrative-image">
-                            <img src="assets/img/cs.png" alt="Ilustrasi mural">
+                            <img src="assets/img/cs.png" alt="Ilustrasi mural"  class="mural-narrative-image" id="muralImage">
                         </div>
                     </div>
 
@@ -251,7 +251,11 @@
         </div>
     </section>
 
+    <div id="imageModal" class="image-modal">
+        <span id="closeModal">&times;</span>
 
+        <img id="modalImage" src="" alt="Ilustrasi mural">
+    </div>
 
     <footer>
         <p>
@@ -276,6 +280,27 @@
                 readMoreText.textContent = "Sembunyikan";
             } else {
                 readMoreText.textContent = "Baca Selengkapnya";
+            }
+        });
+
+
+        const muralImage = document.getElementById("muralImage");
+        const imageModal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const closeModal = document.getElementById("closeModal");
+
+        muralImage.addEventListener("click", () => {
+            modalImage.src = muralImage.src;
+            imageModal.classList.add("show");
+        });
+
+        closeModal.addEventListener("click", () => {
+            imageModal.classList.remove("show");
+        });
+
+        imageModal.addEventListener("click", (e) => {
+            if (e.target === imageModal) {
+                imageModal.classList.remove("show");
             }
         });
     </script>

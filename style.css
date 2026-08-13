@@ -55,6 +55,10 @@ body {
     padding: 70px 24px 40px;
 }
 
+#beranda {
+    scroll-margin-top: 77px;
+}
+
 .badge-theme {
     display: inline-block;
     padding: 8px 16px;
@@ -227,6 +231,56 @@ body {
     overflow: hidden;
     border-radius: 20px;
     background: var(--green-soft);
+}
+
+.mural-narrative-image {
+    cursor: zoom-in;
+}
+
+.image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-modal.show {
+    display: flex;
+}
+
+#modalImage {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+#closeModal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+@media (max-width: 575.98px) {
+    .narrative-image {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 20px;
+        background: var(--green-soft);
+        object-fit: cover;
+        border-radius: 24px;
+    }
 }
 
 .narrative-image img {
