@@ -52,6 +52,7 @@ body {
     min-height: 85vh;
     padding: 100px 0;
     background: radial-gradient(circle at 90% 20%, #dcfce7, transparent 30%), #ffffff;
+    padding: 70px 24px 40px;
 }
 
 .badge-theme {
@@ -314,6 +315,32 @@ footer p {
     margin: 0;
 }
 
+.more-text {
+    display: none;
+}
+
+.more-text.show {
+    display: block;
+}
+
+.read-more {
+    border: none;
+    background: none;
+    color: #15803d;
+    font-weight: 600;
+    padding: 0;
+    cursor: pointer;
+}
+
+#arrow {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.read-more.active #arrow {
+    transform: rotate(180deg);
+}
 
 /* RESPONSIVE */
 
@@ -331,6 +358,13 @@ footer p {
 
 }
 
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
 
 @media (max-width: 576px) {
 
